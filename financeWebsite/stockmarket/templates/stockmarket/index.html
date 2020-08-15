@@ -1,4 +1,17 @@
-
-{% for i in r%}
-<h2>hii what's up {{ stockdata }} </h2>
+{% load commons %}
+<table>
+<tr>
+    <th> Date </th>
+    {% for date in stockdata.columns %}
+        <th> {{ date }} </th>
+    {% endfor %}
+</tr>
+{% for item in stockdata.values %}
+    <tr>
+        <th> {% getValAtIndex val=indexNamesArr ind=forloop.counter %}  </th>
+        {% for v in item %}
+            <td>{{ v }} </td>
+        {% endfor %}
+    </tr>
 {% endfor %}
+</table>
