@@ -5,6 +5,7 @@ register = template.Library()
 def getValAtIndex(*args, **kwargs):
     val = kwargs['val']
     ind = kwargs['ind']
+    print(type(val[int(ind)-1]))
     return val[int(ind)-1]
 
 @register.simple_tag

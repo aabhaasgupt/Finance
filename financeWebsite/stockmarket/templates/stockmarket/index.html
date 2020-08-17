@@ -1,4 +1,21 @@
 {% load commons %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/base.css'%}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="{% static 'js/base.js' %}"></script>
+
+
+<script>
+    my_data = JSON.parse('{{jsonTestObj|safe}}')
+    my_cool_js_function(my_data)
+    {% comment %} console.log(my_data) {% endcomment %}
+</script>
+
+<div class="testDiv" style="width:100px; height:100px; background-color:green;">
+    testing
+</div>
+
 <h1>Stock Market for Apple</h1>
 <table>
 <tr>
@@ -16,3 +33,4 @@
     </tr>
 {% endfor %}
 </table>
+
